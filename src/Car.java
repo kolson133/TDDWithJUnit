@@ -44,8 +44,19 @@ public class Car {
 		}
 	}
 	
+	/**
+	 * Decelerate the car down to the minimum amount
+	 * set in the object constructor.
+	 * @param amount	The amount the car will decelerate
+	 */
 	public void decelerate(int amount){
-		speed+= amount;
+		int limit = 0;
+		int newspeed = speed-= amount;
+		if(amount <= limit || newspeed <=0){
+			speed = limit;
+		}else {
+			speed-= amount;
+		}
 	}
 	
 	/**
